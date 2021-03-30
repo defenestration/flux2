@@ -141,7 +141,7 @@ func bootstrapGitLabCmdRun(cmd *cobra.Command, args []string) error {
 	// Build GitLab provider
 	providerCfg := provider.Config{
 		Provider: provider.GitProviderGitLab,
-		Hostname: gitlabArgs.hostname,
+		Hostname: "https://" + gitlabArgs.hostname,
 		Token:    glToken,
 	}
 	providerClient, err := provider.BuildGitProvider(providerCfg)
